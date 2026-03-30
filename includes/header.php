@@ -11,6 +11,7 @@
 <li><a href="search.php">Example query</a></li>
 <li><a href="about.php">About</a></li>
 <li><a href="credits.php">Credits</a></li>
+<li><a href="real_search.php">Custom Search</a></li>
 </ul>
 </nav>
 </body>

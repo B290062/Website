@@ -1,21 +1,24 @@
 <?php
 
 session_start(); 
+#initalises header that contains css formatting
 include('includes/header.php'); 
+#table variable is created
 $mytable = "example_sequences";
+#make sure connection to mysql is set up
 require 'includes/db_connect.php';
 echo "Example database table:";
 
 
-
+#selects all the data that was manually assigned to 
 $sql = "SELECT * FROM $mytable";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
+
+$stmt->execute($sql);
 
 $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 
-
+#table from playblast.php (week3)
 echo "<table border='1'>";
 echo "<tr>";
 foreach (array_keys($results[0]) as $columnName) {
