@@ -12,8 +12,8 @@ echo "Example database table:";
 
 #selects all the data that was manually assigned to 
 $sql = "SELECT * FROM $mytable";
-
-$stmt->execute($sql);
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
 
 $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 

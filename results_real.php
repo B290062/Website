@@ -76,53 +76,53 @@ $stmt->execute();
 
 // the following is a fasta parser adapted from https://www.biob.in/2017/09/extracting-multiple-fasta-sequences.html
 function get_seq($x) { 
-    $fl = explode(PHP_EOL, $x);
-    $sh = trim(array_shift($fl));
-    if($sh == null) {
-        $sh = "UNKNOWN SEQUENCE";
-    }
-    $fl = array_filter($fl);
-    $seq = "";
-    foreach($fl as $str) {
-        $seq .= trim($str);
-    }
-    $seq = strtoupper($seq);
-    $seq = preg_replace("/[^ACDEFGHIKLMNPQRSTVWY]/i", "", $seq);
-    if ((count($fl) < 1) || (strlen($seq) == 0)) {
-        print "Sequence is Empty!!";
-        exit();
-    } else {
-        return array($sh, $seq);
-    }
+$fl = explode(PHP_EOL, $x);
+$sh = trim(array_shift($fl));
+if($sh == null) {
+$sh = "UNKNOWN SEQUENCE";
+}
+$fl = array_filter($fl);
+$seq = "";
+foreach($fl as $str) {
+$seq .= trim($str);
+}
+$seq = strtoupper($seq);
+$seq = preg_replace("/[^ACDEFGHIKLMNPQRSTVWY]/i", "", $seq);
+if ((count($fl) < 1) || (strlen($seq) == 0)) {
+print "Sequence is Empty!!";
+exit();
+} else {
+return array($sh, $seq);
+}
 }
 
 function fas_get($x) { 
-    $gtr = substr($x, 1);
-    $sqs = explode(">", $gtr);
+$gtr = substr($x, 1);
+$sqs = explode(">", $gtr);
 
-    $records = array(); // array is made to take more data than the code
-    foreach ($sqs as $sq) {
-        if (empty(trim($sq))) continue; 
+$records = array(); // array is made to take more data than the code
+foreach ($sqs as $sq) {
+if (empty(trim($sq))) continue; 
 
-        $spair = get_seq($sq);
+$spair = get_seq($sq);
 
-        $header = $spair[0]; //this is the data normally taken from the code
-        $sequence = $spair[1];
+$header = $spair[0]; //this is the data normally taken from the code
+$sequence = $spair[1];
         
-        #ai regex code to separate the accession and species from the header.
-        preg_match('/^(\\S+)/', $header, $acc);
-        preg_match('/\\[(.*?)\\]/', $header, $sp);
+#ai regex code to separate the accession and species from the header.
+preg_match('/^(\\S+)/', $header, $acc);
+preg_match('/\\[(.*?)\\]/', $header, $sp);
 
-        $records[] = array(
-            'header' => $header,
-            'accession' => $acc[1] ?? 'unknown',
-            'species' => $sp[1] ?? 'unknown',
-            'sequence' => $sequence,
-            'length' => strlen($sequence)
-        );
-    }
+$records[] = array(
+'header' => $header,
+'accession' => $acc[1] ?? 'unknown',
+'species' => $sp[1] ?? 'unknown',
+'sequence' => $sequence,
+'length' => strlen($sequence)
+);
+}
 
-    return $records; 
+return $records; 
 }
 
 $records = fas_get($fasta);
@@ -178,3 +178,6 @@ echo "</table>";
 
 ?>
 
+<a href= "clustalo.php?job_id=<?php echo $job_id; ?>">
+<button>Perform clustalo analysis</button>
+</a>
