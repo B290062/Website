@@ -33,8 +33,9 @@ $max_results = $job["max_sequences"];
 
 //query phrase, since this command is going to executed in bash it needs to be formatted like this to avoid
 //the query formatting influencing the results. Note - Not partial was added from the FAQ section of the course
-// this in theory makes alignment easier
-$query =  '"' . $protein . '"[Protein Name] AND "' . $taxonomy . '"[Organism] NOT partial[Title]';
+// this in theory makes alignment easier 
+// changed the [Protein name] to [Title] as some queries were to strict.
+$query = $protein . '[Title] AND ' . $taxonomy . '[Organism]';
 $query_safe = escapeshellarg($query);
 
 
@@ -69,7 +70,7 @@ $sql = "UPDATE analysis_jobs SET raw_fasta = :fasta, status = :status WHERE job_
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':fasta', $fasta, PDO::PARAM_STR);
-$stmt->bindValue(':status', "acquired", PDO::PARAM_STR);
+$stmt->bindValue(':status', "Complete", PDO::PARAM_STR);
 $stmt->bindValue(':job_id', $job_id, PDO::PARAM_STR);
 
 $stmt->execute();
@@ -153,31 +154,37 @@ $stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
 
 
 
-$sql = "SELECT accession, species_name, sequence_length FROM job_sequences where job_id = $job_id";
+$sql = "SELECT protein_name, sequence_length,taxonomic_group, sequence FROM job_sequences where job_id = $job_id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
-# table from playblast.php (week3)
+
+
 echo "<table border='1'>";
 echo "<tr>";
-foreach (array_keys($results[0]) as $columnName) {
-echo "<th>" . htmlspecialchars($columnName) . "</th>";
-}
+echo "<th>Header (Accession, protein name & species)</th>";
+echo "<th>Sequence length</th>";
+echo "<th>Taxonomy</th>";
+echo "<th>Sequence preview</th>";
 echo "</tr>";
 
+//https://www.php.net/manual/en/control-structures.foreach.php
+// this allows for looping through each row in the data
+// sequence is set do only display the first 40 characters to make it easier to view
 foreach ($results as $row) {
 echo "<tr>";
-foreach ($row as $value) {
-echo "<td>" . htmlspecialchars($value) . "</td>";
-}
+echo "<td>" . htmlspecialchars($row['protein_name']) . "</td>";
+echo "<td>" . htmlspecialchars($row['sequence_length']) . "</td>";
+echo "<td>" . htmlspecialchars($row['taxonomic_group']) . "</td>";
+echo "<td>" . htmlspecialchars(substr($row['sequence'], 0, 40)) . "...</td>";
 echo "</tr>";
 }
+
 echo "</table>";
-
 ?>
-
-<a href= "clustalo.php?job_id=<?php echo $job_id; ?>">
-<button>Perform clustalo analysis</button>
-</a>
+<form action="clustalo.php" method="get">
+    <input type="hidden" name="job_id" value="<?php echo htmlspecialchars($job_id); ?>">
+    <button type="submit">Perform further analysis</button>
+</form>

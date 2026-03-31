@@ -7,11 +7,11 @@
 <nav class="navbar"> 
 <ul>
 <li><a href="homepage.php">Home</a></li>
-<li><a href="example.php">Example database</a></li>
-<li><a href="search.php">Example query</a></li>
-<li><a href="about.php">About</a></li>
-<li><a href="credits.php">Credits</a></li>
 <li><a href="real_search.php">Custom Search</a></li>
+<li><a href="credits.php">Credits</a></li>
+<li><a href="example.php">Example Dataset</a></li>
+<li><a href="previous_analysis.php">Previous Analyses</a></li>
+
 </ul>
 </nav>
 </body>

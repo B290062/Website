@@ -1,0 +1,42 @@
+CLUSTAL O(1.2.4) multiple sequence alignment
+
+
+sp|P32183.1|FOXA3_RAT      -------------------------------------------------------MLGSV
+AAC52122.1                 MEEGMNILHDFGIQSTRYLQVNYQDSQDWFILVSVIADLRNAFYVLFPIWFHLKETVGIN
+AAA16222.1                 MEEGMNVLHDFGIQSTHYLQVNYQDSQDWFILVSVIADLRNAFYVLFPIWFHLQEAVGIK
+                                                                                   :*  
+
+sp|P32183.1|FOXA3_RAT      KMEAHD-------LAEWSYYPEA------GEVYSPVNPVPTMAPLNSYMSLNPLSSPYPP
+AAC52122.1                 LLWVAVVGDWFNLVFKWILFGQRPYWWVLDTDYYSNSSVP-------------IIKQFPV
+AAA16222.1                 LLWVAVIGDWLNLVFKWILFGQRPYWWVLDTDYYSNTSVP-------------LIKQFPV
+                            : .         : :*  : :       .  *   . **             : . :* 
+
+sp|P32183.1|FOXA3_RAT      GGLQASPLPTGPLAPPAPTAPLGPTFPGLGAGSGTGGSASGYGAPGPGLVHGKEMAKGYR
+AAC52122.1                 T------------------CETGP---GSPSGHAM-------GAAGVYYVMVTSTLAIF-
+AAA16222.1                 T------------------CETGP---GSPSGHAM-------GTAGVYYVMVTSTLSIF-
+                                              .  **   *  :* .        *: *   *  ..    : 
+
+sp|P32183.1|FOXA3_RAT      RPLTHAKPPYSYISLITMA--------I---------------QQAPGKM--LTLSEIYQ
+AAC52122.1                 --RGKKKPTYGFRCLNVILWLGFWAVQLNVCLSRIYLAAHFPHQVVAGVLSGIAVAETFS
+AAA16222.1                 --QGKIKPTYRFRCLNVILWLGFWAVQLNVCLSRIYLAAHFPHQVVAGVLSGIAVTETFS
+                               : ** * : .* .:         :               * . * :  ::::* :.
+
+sp|P32183.1|FOXA3_RAT      WIM----------------------DL----------FPYYRENQQRWQNSIRHSLSFND
+AAC52122.1                 HIRGIYNASLRKYCLITIFLFGFALGFYLLLKGLGVDLLWTLEKAKRWCERPEWVHLDTT
+AAA16222.1                 HIHSIYNASLKKYFLITFFLFSFAIGFYLLLKGLGVDLLWTLEKAQRWCEQPEWVHIDTT
+                            *                       .:          : :  *: :** :  .     . 
+
+sp|P32183.1|FOXA3_RAT      CFVKVARSPDKPGKGSYWALH-PSSGNMFENGCYLRRQKRFKLEEKAKKGNSATSATRNG
+AAC52122.1                 PFASLFK-----NLGTLLGLGLALNSSMYRKSCKGELSKSFPFRFACI------------
+AAA16222.1                 PFASLLK-----NLGTLFGLGLALNSSMYRESCKGKLSKWLPFRLSSI------------
+                            *..: :     . *:  .*    ...*:.:.*  . .* : :.  .             
+
+sp|P32183.1|FOXA3_RAT      TVGSATSATTTAATAVTSPAQPQPTPPSEPEAQSGEDVGGLDCASPPSSAPYFTGLELPG
+AAC52122.1                 -----------VASLVLLHLFDSLKPPSQVELIFYI---LSFCKSA----------TVPF
+AAA16222.1                 -----------VASLVLLHVFDSLKPPSQVELVFYV---LSFCKSA----------VVPL
+                                      .*: *      . .***: *           * *            :* 
+
+sp|P32183.1|FOXA3_RAT      ELKLDAPYNFNHPFSINNLMSEQTSTPSKLDVGFGGYGAESGEPGVYYQSLYSRSLLNAS
+AAC52122.1                 ASVSLI------PYCLARILGQT----HKKSL----------------------------
+AAA16222.1                 ASVSVI------PYCLAQVLGQP----HKKSL----------------------------
+                                       *:.: .::.:      * .:                            

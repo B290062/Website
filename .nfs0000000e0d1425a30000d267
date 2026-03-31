@@ -1,0 +1,54 @@
+<?php
+require('includes/db_connect.php');
+
+/* NCBI query */
+$query = "glucose-6-phosphatase[Title] AND Aves[Organism] NOT partial NOT fragment";
+$query_safe = escapeshellarg($query);
+
+/* fetch FASTA from NCBI */
+$command = "/home/s2089123/edirect/esearch -db protein -query $query_safe "
+. "| /home/s2089123/edirect/efetch -format uid "
+. "| head -n 10 "
+. "| /home/s2089123/edirect/epost -db protein "
+. "| /home/s2089123/edirect/efetch -format fasta";
+
+$fasta = shell_exec($command);
+
+if (!$fasta) {
+    echo "No data retrieved.";
+    exit;
+}
+
+/* clear old example table */
+$pdo->exec("DELETE FROM example_sequences");
+
+/* FASTA parser (simplified) */
+$entries = explode(">", substr($fasta, 1));
+
+$sql = "INSERT INTO example_sequences
+(accession, protein_name, species_name, sequence)
+VALUES (:accession, :protein_name, :species_name, :sequence)";
+
+$stmt = $pdo->prepare($sql);
+
+foreach ($entries as $entry) {
+    $lines = explode("\n", trim($entry));
+    $header = array_shift($lines);
+    $sequence = implode("", $lines);
+
+    /* extract accession */
+    preg_match('/^(\\S+)/', $header, $acc);
+
+    /* extract species */
+    preg_match('/\\[(.*?)\\]/', $header, $sp);
+
+    $stmt->bindValue(':accession', $acc[1] ?? 'unknown');
+    $stmt->bindValue(':protein_name', $header);
+    $stmt->bindValue(':species_name', $sp[1] ?? 'unknown');
+    $stmt->bindValue(':sequence', $sequence);
+
+    $stmt->execute();
+}
+
+echo "Example table updated successfully!";
+?>

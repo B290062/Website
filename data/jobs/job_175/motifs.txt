@@ -1,0 +1,45 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Tue 31 Mar 2026 13:44:49
+# Commandline: patmatmotifs
+#    -full
+#    -sequence /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_175/input.fasta
+#    -outfile /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_175/motifs.txt
+# Report_format: dbmotif
+# Report_file: /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_175/motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: AAC52122.1     from: 1   to: 357
+# HitCount: 2
+#
+# Full: Yes
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 139 of sequence
+End = position 142 of sequence
+
+Motif = AMIDATION
+
+TLAIFRGKKKPTYG
+     |  |
+   139  142
+
+Length = 22
+Start = position 32 of sequence
+End = position 53 of sequence
+
+Motif = LEUCINE_ZIPPER
+
+QDWFILVSVIADLRNAFYVLFPIWFHLKETVG
+     |                    |
+    32                    53
+
+
+#---------------------------------------
+#---------------------------------------

@@ -15,10 +15,15 @@ $job = $stmt -> fetch(PDO::FETCH_ASSOC);
 
 $fasta = $job['raw_fasta'];
 
-#https://stackoverflow.com/questions/13372179/creating-a-folder-when-i-run-file-put-contents?utm_sour
-$inputname = ("/localdisk/home/s2089123/public_html/website_assignment/data/jobs/" . $job_id . ".fasta");
-$outputname = ("/localdisk/home/s2089123/public_html/website_assignment/data/jobs/" . $job_id . ".aligned");
 
+$job_dir = "/localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_" . $job_id;
+#https://stackoverflow.com/questions/13372179/creating-a-folder-when-i-run-file-put-contents?utm_sour
+$inputname = ($job_dir . "/input.fasta");
+$outputname = ($job_dir . "/aligned.fasta");
+
+if (!file_exists($job_dir)) {
+mkdir($job_dir, 0775, true);
+}
 
 // These commands are needed for this step to work
 //chmod 755 /localdisk/home/s2089123/public_html/website_assignment/data
@@ -35,3 +40,50 @@ $fasta_output = shell_exec($command);
 $aligned = file_get_contents($outputname);
 echo "<pre>" . htmlspecialchars($aligned) . "</pre>";
 
+$plotpath = $job_dir . "/conservation";
+//https://emboss.sourceforge.net/apps/cvs/emboss/apps/plotcon.html
+$plotcon_command = "plotcon -sformat clustal -sequence " . escapeshellarg($outputname) . " -graph png -goutfile " . escapeshellarg($plotpath) . " -auto ";
+$plotcon = shell_exec($plotcon_command);
+
+
+echo "<img src='data/jobs/job_$job_id/conservation.1.png'>";
+
+$patmatmotifs = $job_dir . "/motifs.txt";
+$patmatmotifs_command = "patmatmotifs -full -sequence " . escapeshellarg($inputname) . " -outfile " . escapeshellarg($patmatmotifs) . " -rformat excel ";
+$patmat = shell_exec($patmatmotifs_command);
+
+
+$motifs = file($patmatmotifs);
+
+if (count($motifs) == 1) {
+echo "<p>No PROSITE motifs were found in the dataset.</p>";
+}else {
+# https://stackoverflow.com/questions/28690855/str-getcsv-on-a-tab-separated-file?
+# table from playblast.php (week3)
+$rows = array_map(function($line) {
+return str_getcsv($line, "\t");
+}, $motifs);
+echo "<table border='1'>";
+
+foreach ($rows as $i => $row) {
+echo "<tr>";
+
+foreach ($row as $value) {
+echo $i === 0
+? "<th>" . htmlspecialchars($value) . "</th>"
+: "<td>" . htmlspecialchars($value) . "</td>";
+}
+
+echo "</tr>";
+}
+
+echo "</table>";
+}
+#https://www.bioinformatics.nl/cgi-bin/emboss/help/pepstats
+$pepstat_path = $job_dir . "/stats.txt";
+$pepstat_command = "pepstats -sequence " . escapeshellarg($inputname) . " -outfile " . escapeshellarg($pepstat_path);
+$pepstat = shell_exec($pepstat_command);
+
+$pepstat_file = file_get_contents($pepstat_path);
+echo "<pre>" . htmlspecialchars($pepstat_file) . "</pre>";
+?>

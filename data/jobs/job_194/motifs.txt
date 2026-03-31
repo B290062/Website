@@ -1,0 +1,27 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Tue 31 Mar 2026 14:17:20
+# Commandline: patmatmotifs
+#    -full
+#    -sequence /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_194/input.fasta
+#    -outfile /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_194/motifs.txt
+#    -rformat2 table
+# Report_format: table
+# Report_file: /localdisk/home/s2089123/public_html/website_assignment/data/jobs/job_194/motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: XP_002194882.1     from: 1   to: 355
+# HitCount: 0
+#
+# Full: Yes
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+  Start     End   Score Motif 
+
+#---------------------------------------
+#---------------------------------------

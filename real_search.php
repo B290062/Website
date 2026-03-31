@@ -7,24 +7,23 @@
 <form action="run_analysis.php" method="POST">
 <div>
 <label for = "taxonomy"> Enter a taxonomic group: </label>
-<input id = "taxonomy" type = "text" name = 'taxonomy' required/>
+<input id = "taxonomy" type = "text" name = 'taxonomy' required value = Aves>
 </div>
 <div>
 <label for = "protein"> Enter a protein family: </label>
-<input id = "protein" type = "text" name = 'protein' required/>
+<input id = "protein" type = "text" name = 'protein' required value = glucose-6-phosphatase>
 </div>
 <div>
-<label for = "max_results">number of results: </label>
+<label for = "max_results">Number of results: </label>
 <!-- number type results adapted from https://www.w3schools.com/html/html_form_input_types.asp -->
 <!-- required function wont allow the query database button to be pressed unless all three fields are entered -->
-<input id = "max_results" type = "number" name = 'max_results' min="1" max="30"/ required value = 3>
+<input id = "max_results" type = "number" name = 'max_results' min="1" max="30"/ required value = 10>
 </div>
 
 <button>Query database</button>
 
 <!-- code adapted from https://www.youtube.com/watch?v=lcA-yVUh-S8 -->
 
-
+<p> The default
 </form>
-
 </body>

@@ -1,0 +1,3 @@
+SeqName	Start	End	Score	Strand	Motif
+FOXA3_RAT	119	132	14	+	FORK_HEAD_1
+FOXA3_RAT	163	169	7	+	FORK_HEAD_2
