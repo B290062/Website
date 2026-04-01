@@ -1,0 +1,92 @@
+CLUSTAL O(1.2.4) multiple sequence alignment
+
+
+curl:         ---(22)The----------------------------r-eq------------------
+ERROR:        ------------------:curlcommandfail-ed(TueMar3122:----------5
+•d             POSThttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+HTTP/1.1      --------------------429TooManyRequ-ests--------------------
+WARNING:      -----------------------------:FAILURE(TueMar3122:----------5
+nquire        -urlhttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+EMPTY         ------------------------------------------------------------
+SECOND        ------------------------------------------------------------
+curl:         ---(22)The----------------------------r-eq------------------
+ERROR:        ------------------:curlcommandfail-ed(TueMar3122:----------5
+              POSThttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+HTTP/1.1      --------------------429TooManyRequ-ests--------------------
+WARNING:      -----------------------------:FAILURE(TueMar3122:----------5
+nquire        -urlhttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+EMPTY         ------------------------------------------------------------
+LAST          ------------------------------------------------------------
+curl:         ---(22)The----------------------------r-eq------------------
+ERROR:        ------------------:curlcommandfail-ed(TueMar3122:----------5
+              POSThttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+HTTP/1.1      --------------------429TooManyRequ-ests--------------------
+ERROR:        -----------------------------:FAILURE(TueMar3122:----------5
+nquire        -urlhttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+EMPTY         ------------------------------------------------------------
+QUERY         ------------------------------FAIL-URE----------------------
+curl:         ---(22)The----------------------------r-eq------------------
+ERROR:        ------------------:curlcommandfail-ed(TueMar3122:----------5
+              POSThttps://eutilsncbinl---mnihgov/entr-ez/eutils/efetchfcgi
+HTTP/1.1      --------------------429TooManyRequ-ests--------------------
+                                                                          
+
+curl:         -----------------------------------------------u-estedURL--r
+ERROR:        6:29BST2026)with:22-----------------------------------------
+•d             dquerykey=1&WebEnv=MCID69cc430d68f996d7a0065f34&retstart=0&r
+HTTP/1.1      ------------------------------------------------------------
+WARNING:      6:29BST2026)------------------------------------------------
+nquire        qu-erykey--1WebEn-vMCID69cc430d68f996d7a0065f34r-etstart0--r
+EMPTY         -----------------------------------------------------------R
+SECOND        ------------------------------------------------------------
+curl:         -----------------------------------------------u-estedURL--r
+ERROR:        6:31BST2026)with:22-----------------------------------------
+              dquerykey=1&WebEnv=MCID69cc430d68f996d7a0065f34&retstart=0&r
+HTTP/1.1      ------------------------------------------------------------
+WARNING:      6:31BST2026)------------------------------------------------
+nquire        qu-erykey--1WebEn-vMCID69cc430d68f996d7a0065f34r-etstart0--r
+EMPTY         -----------------------------------------------------------R
+LAST          ------------------------------------------------------------
+curl:         -----------------------------------------------u-estedURL--r
+ERROR:        6:33BST2026)with:22-----------------------------------------
+              dquerykey=1&WebEnv=MCID69cc430d68f996d7a0065f34&retstart=0&r
+HTTP/1.1      ------------------------------------------------------------
+ERROR:        6:33BST2026)------------------------------------------------
+nquire        qu-erykey--1WebEn-vMCID69cc430d68f996d7a0065f34r-etstart0--r
+EMPTY         -----------------------------------------------------------R
+QUERY         ------------------------------------------------------------
+curl:         -----------------------------------------------u-estedURL--r
+ERROR:        6:35BST2026)with:22-----------------------------------------
+              dquerykey=1&WebEnv=MCID69cc430d68f996d7a0065f34&retstart=0&r
+HTTP/1.1      ------------------------------------------------------------
+                                                                          
+
+curl:         etu----------rnede-rror:429--------------------
+ERROR:        -----------------------------------------------
+•d             etmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1      -----------------------------------------------
+WARNING:      -----------------------------------------------
+nquire        etm---ax95dbprotei-nrettypeuilist--retmodetext-
+EMPTY         ESU----------LT--------------------------------
+SECOND        --------------------ATTEMPT--------------------
+curl:         etu----------rnede-rror:429--------------------
+ERROR:        -----------------------------------------------
+              etmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1      -----------------------------------------------
+WARNING:      -----------------------------------------------
+nquire        etm---ax95dbprotei-nrettypeuilist--retmodetext-
+EMPTY         ESU----------LT--------------------------------
+LAST          --------------------ATTEMPT--------------------
+curl:         etu----------rnede-rror:429--------------------
+ERROR:        -----------------------------------------------
+              etmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1      -----------------------------------------------
+ERROR:        -----------------------------------------------
+nquire        etm---ax95dbprotei-nrettypeuilist--retmodetext-
+EMPTY         ESU----------LT--------------------------------
+QUERY         -----------------------------------------------
+curl:         etu----------rnede-rror:429--------------------
+ERROR:        -----------------------------------------------
+              etmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1      -----------------------------------------------
+                                                             

@@ -1,0 +1,28 @@
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Tue Mar 31 22:56:29 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi -d query_key=1&WebEnv=MCID_69cc430d68f996d7a0065f34&retstart=0&retmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1 429 Too Many Requests
+ WARNING:  FAILURE ( Tue Mar 31 22:56:29 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ efetch.fcgi -query_key 1 -WebEnv MCID_69cc430d68f996d7a0065f34 -retstart 0 -retmax 95 -db protein -rettype uilist -retmode text
+EMPTY RESULT
+SECOND ATTEMPT
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Tue Mar 31 22:56:31 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi -d query_key=1&WebEnv=MCID_69cc430d68f996d7a0065f34&retstart=0&retmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1 429 Too Many Requests
+ WARNING:  FAILURE ( Tue Mar 31 22:56:31 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ efetch.fcgi -query_key 1 -WebEnv MCID_69cc430d68f996d7a0065f34 -retstart 0 -retmax 95 -db protein -rettype uilist -retmode text
+EMPTY RESULT
+LAST ATTEMPT
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Tue Mar 31 22:56:33 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi -d query_key=1&WebEnv=MCID_69cc430d68f996d7a0065f34&retstart=0&retmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1 429 Too Many Requests
+ ERROR:  FAILURE ( Tue Mar 31 22:56:33 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ efetch.fcgi -query_key 1 -WebEnv MCID_69cc430d68f996d7a0065f34 -retstart 0 -retmax 95 -db protein -rettype uilist -retmode text
+EMPTY RESULT
+QUERY FAILURE
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Tue Mar 31 22:56:35 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi -d query_key=1&WebEnv=MCID_69cc430d68f996d7a0065f34&retstart=0&retmax=95&db=protein&rettype=uilist&retmode=text
+HTTP/1.1 429 Too Many Requests

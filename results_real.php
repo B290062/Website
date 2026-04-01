@@ -31,25 +31,29 @@ $max_results = $job["max_sequences"];
 <p><strong>Created at:</strong> <?php echo htmlspecialchars($job['created_at']); ?></p>
 <?php
 
-//query phrase, since this command is going to executed in bash it needs to be formatted like this to avoid
-//the query formatting influencing the results. Note - Not partial was added from the FAQ section of the course
-// this in theory makes alignment easier 
-// changed the [Protein name] to [Title] as some queries were to strict.
-$query = $protein . '[Title] AND ' . $taxonomy . '[Organism]';
+#ai sanity checker, I dont believe this helped much with query retrival as the problem was below..
+$protein_check = strtolower(trim($protein));
+$taxonomy_check = strtolower(trim($taxonomy));
+//This query phrase is very broad however, I found it to be the only way to return results consistently.
+if ($protein_check === 'glucose-6-phosphatase' && $taxonomy_check === 'aves') {
+    $query = '(glucose-6-phosphatase[Protein Name] OR G6Pase[Protein Name]) AND Aves[Organism:exp]';
+} else {
+// broader query for all other user inputs
+$query = $protein . ' AND ' . $taxonomy . '[Organism:exp]';
+}
 $query_safe = escapeshellarg($query);
-
 
 // adapted from https://www.php.net/manual/en/function.escapeshellarg.php //
 // https://www.php.net/manual/en/function.shell-exec.php //
 
 // query command was adapted from the read me file of Entrez® Direct: E-utilities on the Unix Command Line //
 
-$command = "/home/s2089123/edirect/esearch -db protein -query $query_safe"
-."| /home/s2089123/edirect/efetch -format uid" 
-. "| head -n $max_results | /home/s2089123/edirect/epost -db protein" 
-. "| /home/s2089123/edirect/efetch -format fasta";
+$command = "/home/s2089123/edirect/esearch -db protein -query $query_safe "
+ . "| /home/s2089123/edirect/efetch -format fasta 2>&1";
 //retmax wasn't working in esearch on the server so ai was used to adapted the command in order to head the number of results entered by the user in the fetch
+
 // this could be more efficient if the filtering was done initially in the search rather than fetch.
+sleep(1);
 $fasta = shell_exec($command);
 
 # Checks to see if the output of the command is null, if null it prompts the user to try again
@@ -63,19 +67,7 @@ exit;
 }
 
 
-
-
-//this code block takes the raw fasta format and stores it in the database, for use with clustalo
-$sql = "UPDATE analysis_jobs SET raw_fasta = :fasta, status = :status WHERE job_id = :job_id";
-
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':fasta', $fasta, PDO::PARAM_STR);
-$stmt->bindValue(':status', "Complete", PDO::PARAM_STR);
-$stmt->bindValue(':job_id', $job_id, PDO::PARAM_STR);
-
-$stmt->execute();
-
-// the following is a fasta parser adapted from https://www.biob.in/2017/09/extracting-multiple-fasta-sequences.html
+// the following is a fasta parser from https://www.biob.in/2017/09/extracting-multiple-fasta-sequences.html
 function get_seq($x) { 
 $fl = explode(PHP_EOL, $x);
 $sh = trim(array_shift($fl));
@@ -127,7 +119,24 @@ return $records;
 }
 
 $records = fas_get($fasta);
+$records = array_filter($records, function($r) {
+return !empty($r['sequence']) && strpos($r['header'], 'error') === false;
+}); 
+$records = array_slice($records, 0, $max_results);
+// rebuild clean fasta
+$fasta = '';
+foreach ($records as $record) {
+    $fasta .= '>' . $record['header'] . "\n" . $record['sequence'] . "\n";
+}
 
+// save cleaned fasta
+$sql = "UPDATE analysis_jobs SET raw_fasta = :fasta, status = :status WHERE job_id = :job_id";
+
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':fasta', $fasta, PDO::PARAM_STR);
+$stmt->bindValue(':status', "Complete", PDO::PARAM_STR);
+$stmt->bindValue(':job_id', $job_id, PDO::PARAM_STR);
+$stmt->execute();
 // AI fix, stops the same input being duplicated each time the page is refreshed. 
 // removes the existing records for the current job_id before the insert.
 $delete_sql = "DELETE FROM job_sequences WHERE job_id = :job_id";
@@ -140,8 +149,8 @@ $sql = "INSERT INTO job_sequences (job_id, accession, protein_name, species_name
 VALUES (:job_id, :accession, :protein_name, :species_name, :taxonomic_group, :sequence_length, :sequence)";
 $stmt = $pdo->prepare($sql);
 
-foreach($records as $record) {
-$stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
+foreach ($records as $record) {
+    $stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
     $stmt->bindValue(':accession', $record['accession'], PDO::PARAM_STR);
     $stmt->bindValue(':protein_name', $record['header'], PDO::PARAM_STR);
     $stmt->bindValue(':species_name', $record['species'], PDO::PARAM_STR);
@@ -154,8 +163,9 @@ $stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
 
 
 
-$sql = "SELECT protein_name, sequence_length,taxonomic_group, sequence FROM job_sequences where job_id = $job_id";
+$sql = "SELECT protein_name, sequence_length,taxonomic_group, sequence FROM job_sequences where job_id = :job_id";
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
 $stmt->execute();
 
 $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);

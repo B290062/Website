@@ -20,6 +20,7 @@ $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 <th> View </th>
 </tr>
 <?php
+# adapted from https://www.php.net/manual/en/control-structures.foreach.php
 foreach ($results as $job) {
 ?>
 <tr>

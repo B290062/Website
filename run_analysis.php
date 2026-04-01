@@ -4,8 +4,8 @@
 $mytable = "analysis_jobs";
 # connect to the mysql database using db_connect
 require 'includes/db_connect.php';
-
-#binds the values from real_search in variables
+//adapted from https://www.w3schools.com/php/php_mysql_prepared_statements.asp
+//binds the values from real_search in variables
 $taxonomy = $_POST['taxonomy'];
 $protein = $_POST['protein'];
 $max_results = $_POST['max_results'];

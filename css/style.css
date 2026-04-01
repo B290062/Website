@@ -1,16 +1,33 @@
 /* this acts as a universal style sheet for the whole wesbite */
 
-h1{ 
+/* was used to produce the code for the title https://htmlcheatsheet.com/css/ */
+/* adapted from https://www.youtube.com/watch?v=f3uCSh6LIY0 and https://www.w3schools.com/css/css_table_size.asp */
+.title {
+ color: #e0dfdc;
+background-color: #567;
+letter-spacing: .1em;
+text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 3px 8px rgba(0, 0, 0, 0.5);
 text-align: center;
-background-color: hsl(195, 70%, 83%);
-font-family: "Times New Roman", Times, serif;
 }
+.content-box {
+max-width: 1000px;
+margin: 30px auto;      
+padding: 30px;
+
+background: rgba(255, 255, 255, 0.7);
+border-radius: 15px;
+
+box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
 .navbar ul{
 list-style-type: none;
-background-color: hsl(195, 70%, 100%);
+background-color: #567;
 padding: 0px;
 margin: 0px;
-overflow: hidden;
+display: flex;
+justify-content: center;
+
 }
 .navbar a{
 color: black;
@@ -23,17 +40,55 @@ text-align: center;
 background-color: hsl(195, 70%, 40%)
 }
 .navbar li{
-float: left;
+
 }
 body{
-background-color: hsl(195, 70%, 83%);
+background-color: #dfeaf0;
 padding: 25px;
+font-family: Georgia, "Times New Roman", serif;
+margin: 0;
+
 }
 
 table{
 width: auto;
-background-color: hsl(195, 70%, 100%);
+background-color: white;
+margin: 20px auto;
+
 }
 
 
-/* adapted from https://www.youtube.com/watch?v=f3uCSh6LIY0 and https://www.w3schools.com/css/css_table_size.asp */
+label {
+text-align: center;
+     
+}
+input {
+width: 200px;
+text-align: center;
+}
+
+.scroll-box {
+max-height: 500px;
+overflow-y: auto;
+overflow-x: auto;
+background: #f8f8f8;
+padding: 15px;
+border: 1px solid #ccc;
+}
+button {
+background-color: white;
+margin-right: 10px;
+margin-top: 20px;
+}
+.cred-box {
+max-width: 1000px;
+margin: 30px auto;      
+padding: 30px;
+
+background: rgba(255, 255, 255, 0.7);
+border-radius: 15px;
+
+box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+

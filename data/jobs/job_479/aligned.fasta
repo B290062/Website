@@ -1,0 +1,146 @@
+CLUSTAL O(1.2.4) multiple sequence alignment
+
+
+CAA27717.1                   ------------------------------------------------------------
+sp|P04040.3|CATA_HUMAN       ------------------------------------------------------------
+AAB59522.1                   ------------------------------------------------------------
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   ------------------------------------------------------------
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      ------------------------------------------------------------
+NP_000541.1                  MSAPKLLSLGCIFFPLLLFQQARAQFPRQCATVEALRSGMCCPDLSPVSGPGTDRCGSSS
+NP_001743.1                  ------------------------------------------------------------
+                                                                                         
+
+CAA27717.1                   --------MADSRDP-------ASDQMQHWKEQRAAQKADVLTTGAGNPVGDKLNVITVG
+sp|P04040.3|CATA_HUMAN       --------MADSRDP-------ASDQMQHWKEQRAAQKADVLTTGAGNPVGDKLNVITVG
+AAB59522.1                   ------------------------------------------------------------
+AAA16651.1                   --------MADSRDP-------ASDQMQHWKEQRAAQ-----------------------
+AAB33751.1                   --------------------------------------ADVLTTGAGNPVGDK-------
+CAA27721.1                   --------MADSRDP-------ASDQMQHWKEQRAAQKADVLTTGAGNPVGDKLNVITVG
+AAB47170.1                   ---------------------------------------------------ERVQL----
+sp|O00623.1|PEX12_HUMAN      --------MA--------------------------------------EHGAHFTAASVA
+NP_000541.1                  GRGRCEAVTADSRPHSPQYPHDGRDDREVWPLRFFNRTC----HCNGNFSGHNCGTCRPG
+NP_001743.1                  --------MADSRDP-------ASDQMQHWKEQRAAQKADVLTTGAGNPVGDKLNVITVG
+                                                                                         
+
+CAA27717.1                   PRGPLLVQDV-VFTDEMAHFDRERIP--ERVVHAKGAGAFGY----FEVTHDITKYSKAK
+sp|P04040.3|CATA_HUMAN       PRGPLLVQDV-VFTDEMAHFDRERIP--ERVVHAKGAGAFGY----FEVTHDITKYSKAK
+AAB59522.1                   ----------------------------------KGAGAFGY----FEVTHDITKYSKAK
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   PRGPLLVQDV-VFTDEMAHFDRERIP--ERVVHAKGAGAFGY----FEVTHDITKYSKAK
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      DDQPSIFEV--VAQDSLMTAVRPALQHVVKVLAESNPTHYGFLWRWFDEIFTLLDLL---
+NP_000541.1                  WRGAACDQRVLIVRRNLLDLSKEEKNHFVRALDMAKRTT-----------HPLFVIATRR
+NP_001743.1                  PRGPLLVQDV-VFTDEMAHFDRERIP--ERVVHAKGAGAFGY----FEVTHDITKYSKAK
+                                                                                         
+
+CAA27717.1                   VFEHIGKK--TP-----------IAVRFS----TVAGESGSADTVRDPRGFAVKFYTEDG
+sp|P04040.3|CATA_HUMAN       VFEHIGKK--TP-----------IAVRFS----TVAGESGSADTVRDPRGFAVKFYTEDG
+AAB59522.1                   VFEHIGKK--TP-----------IAVRFS----TVAGESGSADTVRDPRGFAVKFYTEDG
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   VFEHIGKK--TP-----------IAVRFS----TVAGESGSADTVRDPRGFAVKFYTEDG
+AAB47170.1                   -------------------------TQFG----TLVGLQ---------------------
+sp|O00623.1|PEX12_HUMAN      LQQHYLSR--TS---------ASFSENFYGLKRIVMGDTHKSQ------RLASAGLPKQQ
+NP_000541.1                  SEEILGPDGNTPQFENISIYNYFVWTHYYSVKKTFLGVGQESFG--------EVD-----
+NP_001743.1                  VFEHIGKK--TP-----------IAVRFS----TVAGESGSADTVRDPRGFAVKFYTEDG
+                                                                                         
+
+CAA27717.1                   NWDLVGNNTPIFFIRDPIL---FPSFIHSQKRNPQTHL----------------------
+sp|P04040.3|CATA_HUMAN       NWDLVGNNTPIFFIRDPIL---FPSFIHSQKRNPQTHL----------------------
+AAB59522.1                   NWDLVGNNTPIFFIRDPIL---FPSFIHSQKRNPQTHL----------------------
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   NWDLVGNNTPIFFIRDPIL---FPSFIHSQKRNPQTHL----------------------
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      LWKSI-----MFLVLLPYLKVKLEKLVSSLREEDEYSIHPPSSRWK--------------
+NP_000541.1                  ----FSHEGPAFLTWHRYHLLRLEKDMQEMLQEPSFSLP----YWNFATGKNVCDICTDD
+NP_001743.1                  NWDLVGNNTPIFFIRDPIL---FPSFIHSQKRNPQTHL----------------------
+                                                                                         
+
+CAA27717.1                   ------------KDPDMVWDFWSLRPESLHQVSFLFSDR-GIPDGHRHMNGYGSHTFKLV
+sp|P04040.3|CATA_HUMAN       ------------KDPDMVWDFWSLRPESLHQVSFLFSDR-GIPDGHRHMNGYGSHTFKLV
+AAB59522.1                   ------------KDPDMVWDFWSLRPESLHQVSFLFSDR-GIPDGHRHMNGYGSHTFKLV
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   ------------KDPDMVWDFWSLRPESLHQVSFLFSDR-GIPDGHRHMNGYGSHTFKLV
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      --RFYRAFLAAYPFVNMAWEGWFLVQQ----LRYILGK--------------AQHHSPLL
+NP_000541.1                  LMGSRSNFDSTLISPNSVFSQWRVVCDSLEDYDTLGTLCNSTEDGPIRRNPAGNVARPMV
+NP_001743.1                  ------------KDPDMVWDFWSLRPESLHQVSFLFSDR-GIPDGHRHMNGYGSHTFKLV
+                                                                                         
+
+CAA27717.1                   NANGE---AVYCK-FHYKTDQGIKNLSVE--------DAARLSQEDPDYGIRDLFNA---
+sp|P04040.3|CATA_HUMAN       NANGE---AVYCK-FHYKTDQGIKNLSVE--------DAARLSQEDPDYGIRDLFNA---
+AAB59522.1                   NANGE---AVYCK-FHYKTDQGIKNLSVE--------DAARLSQEDPDYGIRDLFNA---
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   NANGE---AVYCK-FHYKTDQGIKNLSVE--------DAARLSQEDPDYGIRDLFNA---
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      RLAGV---QL-----GRLTVQDIQALEHKPAKASMMQQPARSVSEKINSALKKAVGGVAL
+NP_000541.1                  QRLPEPQDVAQCLEVGLFDTPPFYSNSTNSFRNTV--EGYSDPTGKYDPAVRSLHNLAHL
+NP_001743.1                  NANGE---AVYCK-FHYKTDQGIKNLSVE--------DAARLSQEDPDYGIRDLFNA---
+                                                                                         
+
+CAA27717.1                   -I-----ATGKYPSWTFYI-------QVMTFN----------QAETFPFNPFDLTKVWPH
+sp|P04040.3|CATA_HUMAN       -I-----ATGKYPSWTFYI-------QVMTFN----------QAETFPFNPFDLTKVWPH
+AAB59522.1                   -I-----ATGKYPSWTFYI-------QVMTFN----------QAETFPFNPFDLTKVWPH
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   -I-----ATGKYPSWTFYI-------QVMTFN----------QAETFPFNPFDLTKVWPH
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      SL-----STGL-SVGVFFL-------QFLDWWYSSENQETIKSLTALPTPPPPVH-LDYN
+NP_000541.1                  FLNGTGGQTHLSPNDPIFVLLHTFTDAVFDEWLRRYN----ADISTFPLENAPI---GHN
+NP_001743.1                  -I-----ATGKYPSWTFYI-------QVMTFN----------QAETFPFNPFDLTKVWPH
+                                                                                         
+
+CAA27717.1                   KDYPLIPVGKLVLNRNPVNYFAEVEQIAFDPSNMPPGIEASPDKMLQGRLFAYPDTHRHR
+sp|P04040.3|CATA_HUMAN       KDYPLIPVGKLVLNRNPVNYFAEVEQIAFDPSNMPPGIEASPDKMLQGRLFAYPDTHRHR
+AAB59522.1                   KDYPLIPVGKLVLNRNPVNYFAEVEQIAFDPSNMPPGIEASPDKMLQGRLFAYPDTHRHR
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   KDYPLIPVGKLVLNRNPVNYFAEVEQIAFDPSNMPPGIEASPDKMLQGRLFAYPDTHRHR
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      SDSPLLPKMKTVCPL---CRKTRVNDT---------------VLATSGYVFCYRC-----
+NP_000541.1                  RQYNMVPFWPPVTNTEM---F-----------------VTAPDNL--GYTYEIQWPSREF
+NP_001743.1                  KDYPLIPVGKLVLNRNPVNYFAEVEQIAFDPSNMPPGIEASPDKMLQGRLFAYPDTHRHR
+                                                                                         
+
+CAA27717.1                   LGPNYLHIPVNCPYRARVANYQRDGPMCMQDNQGGAPNYYPNSFGA--PEQQPSALEHSI
+sp|P04040.3|CATA_HUMAN       LGPNYLHIPVNCPYRARVANYQRDGPMCMQDNQGGAPNYYPNSFGA--PEQQPSALEHSI
+AAB59522.1                   LGPNYLHIPVNCPYRARVANYQRDGPMCMQDNQGGAPNYYPNSFGA--PEQQPSALEHSI
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   LGPNYLHIPVNCPYRARVANYQRDGPMCMQDNQGGAPNYYPNSFGA--PEQQPSALEHSI
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      -VFHYVRSHQACPIT---------------------------------------------
+NP_000541.1                  SVPEIIAIAVVGA-------------LLLVALIFGTASYLIRARRSMDEANQPLLTDQYQ
+NP_001743.1                  LGPNYLHIPVNCPYRARVANYQRDGPMCMQDNQGGAPNYYPNSFGA--PEQQPSALEHSI
+                                                                                         
+
+CAA27717.1                   QYSGEVRRFNTANDDNVTQVRAFYVNVLNEEQRKRLCENIAGHLKDAQIFIQKKAVKNFT
+sp|P04040.3|CATA_HUMAN       QYSGEVRRFNTANDDNVTQVRAFYVNVLNEEQRKRLCENIAGHLKDAQIFIQKKAVKNFT
+AAB59522.1                   QYSGEVRRFNTANDDNVTQVRAFYVNVLNEEQRKRLCENIAGHLKDAQIFIQKKAVKNFT
+AAA16651.1                   ------------------------------------------------------------
+AAB33751.1                   ------------------------------------------------------------
+CAA27721.1                   QYSGEVRRFNTANDDNVTQVRAFYVNVLNEEQRKRLCENIAGHLKDAQIFIQKKAVKNFT
+AAB47170.1                   ------------------------------------------------------------
+sp|O00623.1|PEX12_HUMAN      ------------------------------------------------------------
+NP_000541.1                  CYAEEYEKLQNPNQSVV-------------------------------------------
+NP_001743.1                  QYSGEVRRFNTANDDNVTQVRAFYVNVLNEEQRKRLCENIAGHLKDAQIFIQKKAVKNFT
+                                                                                         
+
+CAA27717.1                   EVHPDYGSHIQALLDKYNAEKPKNAIHTFVQSGSHLAAREKANL
+sp|P04040.3|CATA_HUMAN       EVHPDYGSHIQALLDKYNAEKPKNAIHTFVQSGSHLAAREKANL
+AAB59522.1                   EVHPDYGSHIQALLDKYNAEKPKNAIHTFVQSGSHLAAREKANL
+AAA16651.1                   --------------------------------------------
+AAB33751.1                   --------------------------------------------
+CAA27721.1                   EVHPDYGSHIQALLDKYNAEKPKNAIHTFVQSGSHLAAREKANL
+AAB47170.1                   --------------------------------------------
+sp|O00623.1|PEX12_HUMAN      ----GYPTEVQHLIKLYSPEN-----------------------
+NP_000541.1                  --------------------------------------------
+NP_001743.1                  EVHPDYGSHIQALLDKYNAEKPKNAIHTFVQSGSHLAAREKANL
+                                                                         
