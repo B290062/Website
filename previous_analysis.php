@@ -2,6 +2,7 @@
 include('includes/header.php');
 require("includes/db_connect.php");
 
+#order the database by last job
 $sql = "SELECT job_id, protein_family, taxon_name, status, max_sequences, created_at FROM analysis_jobs WHERE status = 'Complete' ORDER BY created_at DESC";
 
 $stmt = $pdo->prepare($sql);

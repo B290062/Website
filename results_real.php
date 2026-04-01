@@ -18,7 +18,7 @@ $stmt->execute();
 #fetchs the all data
 $job = $stmt -> fetch(PDO::FETCH_ASSOC);
 
-
+#extracts the values from the fetch all
 $protein = $job["protein_family"];
 $taxonomy = $job["taxon_name"];
 $max_results = $job["max_sequences"];
@@ -35,25 +35,27 @@ $max_results = $job["max_sequences"];
 $protein_check = strtolower(trim($protein));
 $taxonomy_check = strtolower(trim($taxonomy));
 //This query phrase is very broad however, I found it to be the only way to return results consistently.
+// this was previous tried with not partial and [title] and various other methods.. despite this
+// it remains quite inconsistent
 if ($protein_check === 'glucose-6-phosphatase' && $taxonomy_check === 'aves') {
     $query = '(glucose-6-phosphatase[Protein Name] OR G6Pase[Protein Name]) AND Aves[Organism:exp]';
 } else {
 // broader query for all other user inputs
 $query = $protein . ' AND ' . $taxonomy . '[Organism:exp]';
 }
+// adapted from https://www.php.net/manual/en/function.escapeshellarg.php //
 $query_safe = escapeshellarg($query);
 
-// adapted from https://www.php.net/manual/en/function.escapeshellarg.php //
+
 // https://www.php.net/manual/en/function.shell-exec.php //
 
 // query command was adapted from the read me file of Entrez® Direct: E-utilities on the Unix Command Line //
-
 $command = "/home/s2089123/edirect/esearch -db protein -query $query_safe "
  . "| /home/s2089123/edirect/efetch -format fasta 2>&1";
 //retmax wasn't working in esearch on the server so ai was used to adapted the command in order to head the number of results entered by the user in the fetch
-
 // this could be more efficient if the filtering was done initially in the search rather than fetch.
 sleep(1);
+// https://www.php.net/manual/en/function.shell-exec.php //
 $fasta = shell_exec($command);
 
 # Checks to see if the output of the command is null, if null it prompts the user to try again
@@ -93,7 +95,7 @@ function fas_get($x) {
 $gtr = substr($x, 1);
 $sqs = explode(">", $gtr);
 
-$records = array(); // array is made to take more data than the code
+$records = array(); // array is made to take more data than the code (AI adaptation)
 foreach ($sqs as $sq) {
 if (empty(trim($sq))) continue; 
 
@@ -122,6 +124,7 @@ $records = fas_get($fasta);
 $records = array_filter($records, function($r) {
 return !empty($r['sequence']) && strpos($r['header'], 'error') === false;
 }); 
+#ai adaptation
 $records = array_slice($records, 0, $max_results);
 // rebuild clean fasta
 $fasta = '';
@@ -129,7 +132,7 @@ foreach ($records as $record) {
     $fasta .= '>' . $record['header'] . "\n" . $record['sequence'] . "\n";
 }
 
-// save cleaned fasta
+#this updates the fasta values after filtering for no results.
 $sql = "UPDATE analysis_jobs SET raw_fasta = :fasta, status = :status WHERE job_id = :job_id";
 
 $stmt = $pdo->prepare($sql);
@@ -144,7 +147,7 @@ $delete_stmt = $pdo->prepare($delete_sql);
 $delete_stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);
 $delete_stmt->execute();
 
-
+#cleaned data is stored in job_sequences
 $sql = "INSERT INTO job_sequences (job_id, accession, protein_name, species_name, taxonomic_group, sequence_length, sequence)
 VALUES (:job_id, :accession, :protein_name, :species_name, :taxonomic_group, :sequence_length, :sequence)";
 $stmt = $pdo->prepare($sql);
@@ -162,7 +165,7 @@ foreach ($records as $record) {
 }
 
 
-
+#summary data is extracted
 $sql = "SELECT protein_name, sequence_length,taxonomic_group, sequence FROM job_sequences where job_id = :job_id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':job_id', $job_id, PDO::PARAM_INT);

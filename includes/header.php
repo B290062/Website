@@ -1,8 +1,10 @@
 <head>
 <!-- links to the stylesheet to format the code accordingly -->
+<!--loads universal style sheet everytime header is called -->
 <link rel="stylesheet" href="css/style.css">
 </head>
 
+<!--the html for the header-->
 <div class = "banner">
 <h1 class= "title"> Introduction to website and database design project </h1>
 </div>

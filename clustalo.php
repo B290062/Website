@@ -67,6 +67,9 @@ $aligned = file_get_contents($outputname);
 <p><b>-</b> represents a gap in the sequence</p>
 <p><b>:</b> represents a consevative mutation</p>
 <p><b>()</b> represents a non conservative mutation</p>
+<a href="data/jobs/job_<?= $job_id ?>/aligned.fasta" download>
+  Download File
+</a>
 <div class="scroll-box">
 <pre><?php echo htmlspecialchars($aligned); ?></pre>
 </div>
@@ -83,6 +86,10 @@ $plotcon = shell_exec($plotcon_command);
     <!-- info from https://www.bioinformatics.nl/cgi-bin/emboss/help/plotcon -->
 <p> EMBOSS plotcon reads the alignment from ClustalO and draws a plot of sequence conservation</p>
 <p> it does this by making windows of a specified length across the alignment and compares all possible bases combinations to determine the pair wise subsitution scores</p>
+<a href="data/jobs/job_<?= $job_id ?>/conservation.1.png" download>
+  Download Conservation Plot
+</a>
+<br>
     <img src="data/jobs/job_<?php echo $job_id; ?>/conservation.1.png">
 </div>
 <?php
@@ -98,6 +105,9 @@ $motifs = file($patmatmotifs);
 <h3>Motifs</h3>
 <!-- info from https://emboss.bioinformatics.nl/cgi-bin/emboss/help/patmatmotifs -->
 <p> scanning the motifs using EMBOSS patmatmotifs. this compares the seqeunces with the PROSITE database of motifs to see if the functions of proteins can be identified.</p>
+<a href="data/jobs/job_<?= $job_id ?>/motifs.txt" download>
+  Download Motifs
+</a>
 <?php
 
 if (count($motifs) == 1) {
@@ -138,6 +148,9 @@ $pepstat_file = file_get_contents($pepstat_path);
 <!-- info from https://emboss.sourceforge.net/apps/cvs/emboss/apps/pepstats.html -->
 <h3>PEPSTATS</h3>
 <p> calculates statistics of protein properties such as number of residues and molecular weight for each sequence</p>
+<a href="data/jobs/job_<?= $job_id ?>/stats.txt" download>
+  Download Pepstats
+</a>
 <div class="scroll-box">
 <pre><?php echo htmlspecialchars($pepstat_file); ?></pre>
 </div>

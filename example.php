@@ -19,8 +19,8 @@ $stmt->execute();
 $results = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
 
-
-echo "<table border='1'>";
+echo "<div class='table-wrap'>";
+echo "<table class ='left-table'>";
 echo "<tr>";
 echo "<th>Header (Accession, protein name & species)</th>";
 echo "<th>Sequence length</th>";
@@ -40,6 +40,7 @@ echo "<td>" . htmlspecialchars(substr($row['sequence'], 0, 40)) . "...</td>";
 echo "</tr>";
 }
 echo "</table>";
+echo "</div>";
 ?>
 <!-- AI adapted -->
 <div class="tabs">
@@ -81,6 +82,7 @@ echo "</table>";
 <pre><?php echo htmlspecialchars(file_get_contents("data/jobs/job_267/stats.txt")); ?></pre>
 </div>
 </div>
+<!-- ai adapted -->
 <script>
 function showSection(id) {
 document.querySelectorAll('.section').forEach(function(s) {

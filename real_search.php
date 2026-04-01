@@ -29,6 +29,7 @@
 
 </form>
 <!-- adapted from https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_radio -->
+<!-- pushes the example values to the databoxes and queries -->
 <script>
 function examplevalues(){
 document.getElementById("taxonomy").value= "Aves"
